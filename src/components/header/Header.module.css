@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+:root {
+  --Blue500: hsl(233, 67%, 56%);
+  --Blue700: hsl(248, 70%, 36%);
+
+  --Orange500: hsl(28, 100%, 52%);
+
+  --Neutral900: hsl(243, 96%, 9%);
+  --Neutral800: hsl(243, 27%, 20%);
+  --Neutral700: hsl(243, 23%, 24%);
+  --Neutral600: hsl(243, 23%, 30%);
+  --Neutral300: hsl(240, 6%, 70%);
+  --Neutral200: hsl(250, 6%, 84%);
+  --Neutral0: hsl(0, 0%, 100%);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unitsSelectorContainer {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  background: var(--Neutral800);
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdownContent {
+  display: none;
+  width: 200px;
+  height: auto;
+  position: absolute;
+  padding: 10px;
+  background: var(--Neutral800);
+  margin-top: 40px;
+  border-radius: 6px;
+  right: 0;
+}
+
+.dropdownContent h4 {
+  margin-bottom: 10px;
+}
+
+.unitsSelectorContainer:hover .dropdownContent {
+  display: block;
+}
+
+fieldset {
+  border: none;
+  border-bottom: 1px solid var(--Neutral700);
+}
+
+legend {
+  padding: 10px 0;
+  color: var(--Neutral600);
+}
+
+fieldset div {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset label {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+label:hover {
+  background: var(--Neutral700);
+}
