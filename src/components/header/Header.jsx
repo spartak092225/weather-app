@@ -1,26 +1,55 @@
+import { useState, useEffect, useRef } from "react";
 import styles from "./Header.module.css";
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (containerRef.current && !containerRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+
+    window.addEventListener("mousedown", handleClickOutside);
+    return () => window.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <div className={styles.header}>
       <img src="logo.svg" alt="logo" />
-      <div className={styles.unitsSelectorContainer}>
-        <img src="icon-units.svg" alt="gear icon" />
-        <p>Units</p>
-        <img src="icon-dropdown.svg" alt="" />
 
-        <div className={styles.dropdownContent}>
+      <div
+        className={styles.unitsSelectorContainer}
+        ref={containerRef}
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+      >
+        <div className={styles.unitsBtn}>
+          <img src="icon-units.svg" alt="gear icon" />
+          <p>Units</p>
+          <img src="icon-dropdown.svg" alt="" />
+        </div>
+
+        <div
+          className={`${styles.dropdownContent} ${
+            open ? styles.dropdownOpen : ""
+          }`}
+        >
           <h4>Switch to Imperial</h4>
+
           <fieldset>
             <legend>Temperature</legend>
             <div className={styles.temperatureOptions}>
               <label htmlFor="celsius">
-                Celsius (&#8451;)
+                Celsius (℃)
                 <input type="radio" id="celsius" name="temperature" />
               </label>
 
               <label htmlFor="fahrenheit">
-                Fahrenheit (&#8457;){" "}
+                Fahrenheit (℉)
                 <input type="radio" id="fahrenheit" name="temperature" />
               </label>
             </div>
@@ -37,15 +66,16 @@ export function Header() {
               </label>
             </div>
           </fieldset>
+
           <fieldset>
             <legend>Precipitation</legend>
             <div className={styles.precipitationOptions}>
               <label htmlFor="mm">
-                Millimeters (mm){" "}
+                Millimeters (mm)
                 <input type="radio" id="mm" name="precipitation" />
               </label>
               <label htmlFor="inches">
-                Inches (in){" "}
+                Inches (in)
                 <input type="radio" id="inches" name="precipitation" />
               </label>
             </div>

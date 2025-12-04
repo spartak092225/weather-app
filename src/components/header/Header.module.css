@@ -23,12 +23,11 @@
 
 .header {
   display: flex;
-  justify-content: center;
   justify-content: space-between;
   align-items: center;
 }
 
-.unitsSelectorContainer {
+.unitsBtn {
   position: relative;
   display: flex;
   gap: 5px;
@@ -40,28 +39,30 @@
 }
 
 .dropdownContent {
-  display: none;
+  display: none; /* hidden by default */
   width: 200px;
-  height: auto;
   position: absolute;
   padding: 10px;
   background: var(--Neutral800);
-  margin-top: 40px;
   border-radius: 6px;
   right: 0;
+  z-index: 999;
+}
+
+/* When open = true, React adds this class */
+.dropdownOpen {
+  display: block;
 }
 
 .dropdownContent h4 {
   margin-bottom: 10px;
 }
 
-.unitsSelectorContainer:hover .dropdownContent {
-  display: block;
-}
-
 fieldset {
   border: none;
   border-bottom: 1px solid var(--Neutral700);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 legend {
@@ -79,6 +80,7 @@ fieldset label {
   justify-content: space-between;
   border-radius: 8px;
   padding: 10px;
+  cursor: pointer;
 }
 
 label:hover {
