@@ -5,7 +5,6 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
@@ -16,18 +15,15 @@ export function Header() {
     window.addEventListener("mousedown", handleClickOutside);
     return () => window.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
   return (
     <div className={styles.header}>
       <img src="logo.svg" alt="logo" />
 
-      <div
-        className={styles.unitsSelectorContainer}
-        ref={containerRef}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-      >
-        <div className={styles.unitsBtn}>
+      <div className={styles.unitsSelectorContainer} ref={containerRef}>
+        <div
+          className={styles.unitsBtn}
+          onClick={() => setOpen((prev) => !prev)}
+        >
           <img src="icon-units.svg" alt="gear icon" />
           <p>Units</p>
           <img src="icon-dropdown.svg" alt="" />

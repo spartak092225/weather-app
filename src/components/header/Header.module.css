@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--Main-font);
 }
 
 :root {
@@ -19,6 +19,9 @@
   --Neutral300: hsl(240, 6%, 70%);
   --Neutral200: hsl(250, 6%, 84%);
   --Neutral0: hsl(0, 0%, 100%);
+
+  --Main-font: "DM Sans", sans-serif;
+  --Header-font: "Bricolage Grotesque";
 }
 
 .header {
@@ -39,17 +42,17 @@
 }
 
 .dropdownContent {
-  display: none; /* hidden by default */
+  display: none;
   width: 200px;
   position: absolute;
-  padding: 10px;
+  padding: 15px;
+  margin-top: 10px;
   background: var(--Neutral800);
   border-radius: 6px;
   right: 0;
   z-index: 999;
 }
 
-/* When open = true, React adds this class */
 .dropdownOpen {
   display: block;
 }
