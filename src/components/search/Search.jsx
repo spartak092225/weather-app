@@ -12,21 +12,20 @@ export function Search() {
   }
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside, true);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside, true);
     };
   }, []);
 
   return (
     <div className={styles.searchSection}>
       <h1>How's the sky looking today?</h1>
-      <div className={styles.searchBarContainer}>
-        <div ref={containerRef}>
+      <div className={styles.searchBarContainer} ref={containerRef}>
+        <div style={{ position: "relative" }}>
           <input
             type="search"
             placeholder="Search for a place"
-            onFocus={() => setIsDropdownVisible(true)}
             onChange={() => setIsDropdownVisible(true)}
           />
           <img src="icon-search.svg" alt="" />

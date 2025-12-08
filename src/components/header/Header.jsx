@@ -12,9 +12,11 @@ export function Header() {
       }
     }
 
-    window.addEventListener("mousedown", handleClickOutside);
-    return () => window.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside, true);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside, true);
   }, []);
+
   return (
     <div className={styles.header}>
       <img src="logo.svg" alt="logo" />

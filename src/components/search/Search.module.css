@@ -11,6 +11,7 @@ h1 {
   align-items: center;
   gap: 40px;
 }
+
 .searchBarContainer {
   width: 40%;
   height: 40px;
@@ -46,14 +47,17 @@ h1 {
 }
 
 .searchDropdown {
+  display: none;
   width: 100%;
   position: absolute;
-  grid-area: 2/ 1 / 3 / 2;
+  top: 40px;
+  left: 0;
   border: none;
   border-radius: 6px;
   background: var(--Neutral800);
   margin-top: 10px;
   color: white;
+  z-index: 9999;
 }
 .searchDropdown p {
   display: flex;
