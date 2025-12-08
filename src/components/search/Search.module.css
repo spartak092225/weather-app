@@ -68,3 +68,7 @@ h1 {
   background: var(--Neutral700);
   box-shadow: 1px 1px 0px var(--Neutral600);
 }
+
+.searchDropdownOpen {
+  display: block;
+}
