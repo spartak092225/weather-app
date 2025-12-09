@@ -10,7 +10,7 @@
   gap: 5px;
   background: var(--Neutral800);
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -22,7 +22,7 @@
   padding: 15px;
   margin-top: 10px;
   background: var(--Neutral800);
-  border-radius: 6px;
+  border-radius: 12px;
   right: 0;
   z-index: 999;
 }

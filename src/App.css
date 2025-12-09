@@ -1,4 +1,9 @@
 body {
+  margin: auto;
+  width: 60%;
+
   color: white;
-  background: black;
+  letter-spacing: 2px;
+  background: rgb(0, 0, 0);
+  padding: 40px 0px;
 }
