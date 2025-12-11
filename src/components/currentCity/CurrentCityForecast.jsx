@@ -1,6 +1,9 @@
 import styles from "./CurrentCityForecast.module.css";
 
+
 export function CurrentCity() {
+
+
   return (
     <main>
       <div className={styles.todayAndDailyContainer}>
